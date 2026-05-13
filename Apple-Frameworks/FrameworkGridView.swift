@@ -14,18 +14,23 @@ struct FrameworkGridView: View {
                                GridItem(.flexible())]
     
     var body: some View {
-        LazyVGrid(columns: columns) {
-            ForEach(MockData.frameworks, id: \.id) { framework in
-                FrameWorkTitleView(framework: framework)
-                
+        NavigationView() {
+            ScrollView {
+                LazyVGrid(columns: columns) {
+                    ForEach(MockData.frameworks, id: \.id) { framework in
+                        FrameWorkTitleView(framework: framework)
+                    }
+                }
             }
+            .navigationTitle("Apple Frameworks")
         }
+
     }
 }
 
 #Preview {
     FrameworkGridView()
-        .preferredColorScheme(.dark)
+        //.preferredColorScheme(.dark)
 }
 
 struct FrameWorkTitleView : View {
@@ -41,8 +46,10 @@ struct FrameWorkTitleView : View {
             Text(framework.name)
                 .font(.title2)
                 .fontWeight(.semibold)
+                //.lineLimit(1)
                 .scaledToFit() // enable text to scale
                 .minimumScaleFactor(0.6) // can scale to minimum of 60%
         }
+        .padding()
     }
 }
