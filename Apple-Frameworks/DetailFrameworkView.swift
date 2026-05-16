@@ -9,7 +9,9 @@ import SwiftUI
 
 struct DetailFrameworkView: View {
     
-    let framework = MockData.sampleFramework
+    //let framework = MockData.sampleFramework
+    var framework: Framework
+    @Binding var isShowingDetailView: Bool
     
     var body: some View {
         VStack {
@@ -18,9 +20,9 @@ struct DetailFrameworkView: View {
                 Spacer()
                 
                 Button {
-                    
+                    isShowingDetailView = false
                 } label: {
-                    Image(systemName: "xmark")
+                    Image(systemName: framework.imageName)
                         .foregroundColor(Color(.label))
                         .imageScale(.large)
                         .frame(width: 44, height: 44)
@@ -44,7 +46,7 @@ struct DetailFrameworkView: View {
 }
 
 #Preview {
-    DetailFrameworkView()
+    DetailFrameworkView(framework: MockData.sampleFramework, isShowingDetailView: .constant(false))
 }
 
 struct FrameWorkDescriptionView: View {
