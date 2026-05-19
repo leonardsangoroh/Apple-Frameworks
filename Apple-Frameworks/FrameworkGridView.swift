@@ -16,7 +16,7 @@ struct FrameworkGridView: View {
             ScrollView {
                 LazyVGrid(columns: viewModel.columns) {
                     ForEach(MockData.frameworks, id: \.id) { framework in
-                        FrameWorkTitleView(framework: framework)
+                        FrameworkTitleView(framework: framework)
                             .onTapGesture {
                                 viewModel.selectedFramework = framework
                             }
@@ -35,25 +35,4 @@ struct FrameworkGridView: View {
 #Preview {
     FrameworkGridView()
         //.preferredColorScheme(.dark)
-}
-
-struct FrameWorkTitleView : View {
-    
-    let framework: Framework
-    
-    var body: some View {
-        VStack {
-            Image(framework.imageName)
-                .resizable()
-                .frame(width: 90, height: 90)
-            
-            Text(framework.name)
-                .font(.title2)
-                .fontWeight(.semibold)
-                //.lineLimit(1)
-                .scaledToFit() // enable text to scale
-                .minimumScaleFactor(0.6) // can scale to minimum of 60%
-        }
-        .padding()
-    }
 }

@@ -32,7 +32,7 @@ struct DetailFrameworkView: View {
             
             Spacer()
             
-            FrameWorkTitleView(framework: framework)
+            FrameworkTitleView(framework: framework)
             FrameWorkDescriptionView(framework: framework)
             
             Spacer()
