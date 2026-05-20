@@ -7,9 +7,9 @@ A SwiftUI-based iOS app that showcases Apple's frameworks with detailed informat
 Apple Frameworks is a grid-based application that displays all major Apple development frameworks. Users can browse through frameworks in an interactive grid, tap to view detailed information, and access official Apple documentation through an in-app Safari browser.
 
 ## Screenshots
-!["Grid View"]("Screenshots/GridView.png")
-!["Detail View"]("Screenshots/DetailView.png")
-!["Sheet"]("Screenshots/Sheet.png")
+| !["Grid View"](Screenshots/GridView.png) | !["Detail View"](Screenshots/DetailView.png) | !["Sheet"](Screenshots/Sheet.png) |
+|---|---|---|
+  
 
 ## Features
 
