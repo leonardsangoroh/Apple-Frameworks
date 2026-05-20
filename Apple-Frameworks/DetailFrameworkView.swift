@@ -17,19 +17,7 @@ struct DetailFrameworkView: View {
     var body: some View {
         VStack {
             
-            HStack {
-                Spacer()
-                
-                Button {
-                    isShowingDetailView = false
-                } label: {
-                    Image(systemName: framework.imageName)
-                        .foregroundColor(Color(.label))
-                        .imageScale(.large)
-                        .frame(width: 44, height: 44)
-                }
-            }
-            
+            XDismissButtonView(isShowingDetailView: $isShowingDetailView)
             Spacer()
             
             FrameworkTitleView(framework: framework)
